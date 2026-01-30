@@ -16,17 +16,6 @@ import {
 import { useEffect, useState } from "react"; // Adicionado useState e useEffect
 
 // --- COMPONENTES AUXILIARES ---
-const handleSmoothScroll = (e, targetId) => {
-  e.preventDefault();
-  const element = document.getElementById(targetId);
-  if (element) {
-    const headerOffset = 100;
-    const elementPosition = element.getBoundingClientRect().top;
-    const offsetPosition = elementPosition + window.scrollY - headerOffset;
-    window.scrollTo({ top: offsetPosition, behavior: "smooth" });
-  }
-};
-
 const NavLink = ({ to, children }) => (
   <motion.a
     href={`#${to}`}
@@ -429,7 +418,7 @@ function ServiceCard({ icon, title, desc, gradient, delay }) {
   );
 }
 
-function ProjectRow({ title, category, techs, desc, status, links }) {
+function ProjectRow({ title, techs, desc, status, links }) {
   return (
     <motion.div
       initial={{ opacity: 0, x: -20 }}
