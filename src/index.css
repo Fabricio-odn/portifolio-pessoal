@@ -1,18 +1,53 @@
+
+/**
+ * =============================================================================
+ * PORTFOLIO - ESTILOS GLOBAIS
+ * =============================================================================
+ * Configurações base de tipografia, scroll e reset de estilos.
+ * 
+ * ESTRUTURA:
+ * - Importação do Tailwind CSS
+ * - Variáveis CSS (fonte, cores)
+ * - Reset e configurações base
+ * - Scroll behavior
+ * 
+ * @author Fabricio Oliveira
+ * =============================================================================
+ */
+
+/* Importa Tailwind CSS v4 */
 @import "tailwindcss";
 
-/* --- Configurações Globais --- */
+/* =============================================================================
+   VARIÁVEIS E CONFIGURAÇÕES DE FONTE
+   ============================================================================= */
+
 :root {
+  /* Tipografia */
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
+  /* Otimizações de renderização de texto */
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* --- Correção para Tela Cheia (Ocupar 100%) --- */
+/* =============================================================================
+   COMPORTAMENTO DE SCROLL
+   ============================================================================= */
+
+html {
+  /* Scroll suave para navegação por âncoras */
+  scroll-behavior: smooth;
+}
+
+/* =============================================================================
+   RESET E CONFIGURAÇÕES BASE
+   ============================================================================= */
+
 html,
 body,
 #root {
@@ -20,5 +55,28 @@ body,
   height: 100%;
   margin: 0;
   padding: 0;
+
+  /* Previne scroll horizontal indesejado */
   overflow-x: hidden;
+}
+
+/* =============================================================================
+   SCROLLBAR CUSTOMIZADA (opcional - WebKit browsers)
+   ============================================================================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #171717; /* neutral-900 */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #404040; /* neutral-700 */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #525252; /* neutral-600 */
 }
