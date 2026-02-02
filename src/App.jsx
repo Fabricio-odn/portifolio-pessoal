@@ -520,7 +520,7 @@ const HeroSection = () => (
       className="flex flex-col items-center"
     >
       {/* Badge de disponibilidade */}
-      <AvailabilityBadge />
+      {/* <AvailabilityBadge /> */}
 
       {/* Título principal */}
       <motion.h1
