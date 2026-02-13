@@ -39,10 +39,10 @@ import { useEffect, useState } from "react";
    ============================================================================= */
 
 /** Usuário do GitHub para buscar repositórios */
-const GITHUB_USERNAME = "fabricio-odn";
+const GITHUB_USERNAME = "Fabricio-odn";
 
 /** Número máximo de repositórios a exibir */
-const MAX_REPOS = 4;
+const MAX_REPOS = 10;
 
 /** Link do WhatsApp para contato */
 const WHATSAPP_LINK = "https://wa.me/5511958980732";
@@ -102,7 +102,7 @@ const SERVICES_DATA = [
 ];
 
 /** Projeto fixo em destaque */
-const FEATURED_PROJECT = {
+const FEATURED_PROJECT1 = {
   title: "Oliveira Solutions Portal",
   category: "Institucional & Infra",
   techs: ["React", "Tailwind", "Vercel", "SEO"],
@@ -112,9 +112,19 @@ const FEATURED_PROJECT = {
   links: { demo: "https://oliveirasolutions.com.br" },
 };
 
+const FEATURED_PROJECT2 = {
+  title: "Oliveira Cold Mailer & Miner",
+  category: "SaaS & Automation",
+  techs: ["Next.js", "Supabase", "PostgreSQL", "Tailwind"],
+  description:
+    "Plataforma Fullstack de prospecção B2B. Integra um minerador de leads automatizado com um sistema de disparo de Cold Emails. Utiliza Supabase para gerenciamento de dados em tempo real e autenticação segura.",
+  status: "Online",
+  links: { demo: "https://oliveira-cold-mailer.vercel.app/dashboard" },
+};
+
 /** Links das redes sociais */
 const SOCIAL_LINKS = [
-  { icon: Linkedin, href: "https://linkedin.com/in/seu-perfil" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/fabricio-on/" },
   { icon: Github, href: `https://github.com/${GITHUB_USERNAME}` },
   { icon: Mail, href: "mailto:contato@email.com" },
 ];
@@ -742,12 +752,21 @@ const ProjectsSection = ({ repos, loading }) => (
     <div className="space-y-8">
       {/* Projeto em destaque (fixo) */}
       <ProjectRow
-        title={FEATURED_PROJECT.title}
-        techs={FEATURED_PROJECT.techs}
-        description={FEATURED_PROJECT.description}
-        status={FEATURED_PROJECT.status}
-        links={FEATURED_PROJECT.links}
+        title={FEATURED_PROJECT1.title}
+        techs={FEATURED_PROJECT1.techs}
+        description={FEATURED_PROJECT1.description}
+        status={FEATURED_PROJECT1.status}
+        links={FEATURED_PROJECT1.links}
       />
+
+      <ProjectRow
+        title={FEATURED_PROJECT2.title}
+        techs={FEATURED_PROJECT2.techs}
+        description={FEATURED_PROJECT2.description}
+        status={FEATURED_PROJECT2.status}
+        links={FEATURED_PROJECT2.links}
+      />
+
 
       {/* Projetos dinâmicos do GitHub */}
       {loading ? (
